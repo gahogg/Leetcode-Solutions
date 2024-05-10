@@ -2,25 +2,26 @@ from collections import deque
 
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
-        # Note: If you watched the video for this, you would have seen slightly
-        # different code that uses another set called "coords". You don't need this,
-        # because we can just use the intersection of a_seen and p_seen instead!
-        
         p_que = deque()
         p_seen = set()
+        
         a_que = deque()
         a_seen = set()
+        
         m, n = len(heights), len(heights[0])
 
         for j in range(n):
             p_que.append((0, j))
             p_seen.add((0, j))
+            
         for i in range(1, m):
             p_que.append((i, 0))
             p_seen.add((i, 0))
+            
         for i in range(m):
             a_que.append((i, n - 1))
             a_seen.add((i, n - 1))
+            
         for j in range(n - 1):
             a_que.append((m - 1, j))
             a_seen.add((m - 1, j))
