@@ -15,3 +15,6 @@ class Solution:
             sett.add(s[r])
 
         return longest
+
+# Time Complexity: O(n^2)
+# Space Complexity: O(n)
