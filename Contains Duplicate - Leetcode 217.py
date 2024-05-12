@@ -7,3 +7,6 @@ class Solution:
             else:
                 h.add(num)
         return False
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
