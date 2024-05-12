@@ -30,3 +30,6 @@ class Solution:
 
         backtrack(0)
         return ans
+
+# Time Complexity: O(n * 4^n)
+# Space Complexity: O(n)
