@@ -2,6 +2,7 @@ class Solution:
     def isValid(self, s: str) -> bool:
         hashmap = {")": "(", "}": "{", "]": "["}
         stk = []
+
         for c in s:
             if c not in hashmap:
                 stk.append(c)
@@ -14,3 +15,6 @@ class Solution:
                         return False
 
         return not stk
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
