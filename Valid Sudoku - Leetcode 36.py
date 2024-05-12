@@ -35,3 +35,6 @@ class Solution:
                     elif item != '.':
                         s.add(item)
         return True
+
+# Time Complexity: O(n^2)
+# Space Complexity: O(n)
