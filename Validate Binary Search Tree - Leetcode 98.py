@@ -10,3 +10,6 @@ class Solution:
             return is_valid(node.left, minn, node.val) and is_valid(node.right, node.val, maxx)
 
         return is_valid(root, float("-inf"), float("inf"))
+
+# Time Complexity: O(n)
+# Space Complexity: O(h) { here "h" is height of tree }
