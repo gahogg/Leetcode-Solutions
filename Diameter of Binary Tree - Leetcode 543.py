@@ -16,3 +16,6 @@ class Solution:
 
         height(root)
         return largest_diameter[0]
+
+# Time Complexity: O(n)
+# Space Complexity: O(h) { here "h" is the height of the tree }
