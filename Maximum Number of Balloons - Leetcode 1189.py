@@ -11,3 +11,6 @@ class Solution:
             return 0
         else:
             return min(counter["b"], counter["a"], counter["l"] // 2, counter["o"] // 2, counter["n"])
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
