@@ -18,3 +18,6 @@ class Solution:
             summ += max(0, pot - height[i])
 
         return summ
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
