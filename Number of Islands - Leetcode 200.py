@@ -20,3 +20,6 @@ class Solution:
                     dfs(i, j)
 
         return num_islands
+
+# Time Complexity: O(m*n)
+# Space Complexity: O(m*n)
