@@ -17,4 +17,4 @@ class Solution:
         return longest
 
 # Time Complexity: O(n)
-# Space Complexity: O(n)
+# Space Complexity: O(n) (but because we're limited to common characters only, it's actually O(1))
