@@ -14,3 +14,6 @@ class Solution:
             longest = max(longest, (r - l + 1))
 
         return longest
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
