@@ -28,4 +28,7 @@ class Solution:
             if not dfs(i):
                 return False
         
-        return True # Time: O(N + E), Space: O(N + E)
+        return True 
+
+# Time Complexity: O(N + E) 
+# Space Complexity: O(N + E)
