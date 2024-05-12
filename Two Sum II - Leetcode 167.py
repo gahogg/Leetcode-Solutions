@@ -12,3 +12,6 @@ class Solution:
                 l += 1
             else:
                 r -= 1
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
