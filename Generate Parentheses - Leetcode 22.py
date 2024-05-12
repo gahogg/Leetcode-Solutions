@@ -18,3 +18,6 @@ class Solution:
 
         backtrack(0, 0)
         return ans
+
+# Time Complexity: O(2^n)
+# Space Complexity: O(n)
