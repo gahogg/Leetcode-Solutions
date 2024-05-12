@@ -19,3 +19,6 @@ class Solution:
 
         backtrack(n)
         return ans
+
+# Time Complexity: O(n choose k)
+# Space Complexity: O(n)
