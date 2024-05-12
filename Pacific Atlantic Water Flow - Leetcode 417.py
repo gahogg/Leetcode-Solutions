@@ -39,3 +39,6 @@ class Solution:
         get_coords(p_que, p_seen)
         get_coords(a_que, a_seen)
         return list(p_seen.intersection(a_seen))
+
+# Time Complexity: O(m*n)
+# Space Complexity: O(m*n)
