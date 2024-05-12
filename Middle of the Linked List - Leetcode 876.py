@@ -8,3 +8,6 @@ class Solution:
             slow = slow.next
 
         return slow
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
