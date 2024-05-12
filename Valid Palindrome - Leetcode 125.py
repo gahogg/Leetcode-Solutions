@@ -20,3 +20,6 @@ class Solution:
             R -= 1
 
         return True
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
