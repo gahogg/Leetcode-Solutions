@@ -19,3 +19,6 @@ class Solution:
                 break
         
         return ret
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
