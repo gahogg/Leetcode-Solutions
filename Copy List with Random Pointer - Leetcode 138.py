@@ -20,3 +20,6 @@ class Solution:
             curr = curr.next
 
         return old_to_new[head]
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
