@@ -20,4 +20,8 @@ class Solution:
                         stk.append(floor(division))
             else:
                 stk.append(int(t))
+
         return stk[0]
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
