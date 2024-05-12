@@ -25,3 +25,6 @@ class Solution:
                 new_node.neighbors.append(new_nei)
 
         return o_to_n[start]
+
+# Time Complexity: O(V+E)
+# Space Complexity: O(V)
