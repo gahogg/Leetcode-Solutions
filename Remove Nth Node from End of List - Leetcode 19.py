@@ -6,6 +6,7 @@ class Solution:
 
         for _ in range(n + 1):
             ahead = ahead.next
+
         while ahead:
             behind = behind.next
             ahead = ahead.next
@@ -13,3 +14,6 @@ class Solution:
         behind.next = behind.next.next
 
         return dummy.next
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
