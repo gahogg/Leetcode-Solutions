@@ -14,3 +14,6 @@ class Solution:
         
         
         return dp[amount] if dp[amount] < float('inf') else -1
+        # Let C be the number of coins and A be the amount.
+        # Time Complexity: O(C * Amount)
+        # Space Complexity: O(Amount)
