@@ -14,3 +14,6 @@ class Solution:
             return balanced(p.left, q.left) and balanced(p.right, q.right)
 
         return balanced(p, q)
+
+# Time Complexity: O(n)
+# Space Complexity: O(h) { here "h" is the height of the tree }
