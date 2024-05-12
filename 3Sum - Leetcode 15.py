@@ -14,3 +14,6 @@ class Solution:
                     s.add(tuple(sorted([nums[i], nums[j], desired])))
 
         return s
+
+# Time Complexity: O(n^2)
+# Space Complexity: O(n)
