@@ -21,3 +21,6 @@ class MinStack:
 
     def getMin(self) -> int:
         return self.min_stk[-1]
+
+# Time Complexity: O(1)
+# Space Complexity: O(n)
