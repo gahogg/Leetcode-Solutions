@@ -17,3 +17,6 @@ class Solution:
             max_w = max(max_w, w)
 
         return max_w
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
