@@ -12,4 +12,8 @@ class Solution:
             r_arr[j] = r_mult
             l_mult *= nums[i]
             r_mult *= nums[j]
+
         return [l*r for l, r in zip(l_arr, r_arr)]
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
