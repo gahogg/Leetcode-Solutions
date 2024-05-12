@@ -10,9 +10,13 @@ class Solution:
             h = min(height[l], height[r])
             a = w * h
             max_area = max(max_area, a)
+            
             if height[l] < height[r]:
                 l += 1
             else:
                 r -= 1
 
         return max_area
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
