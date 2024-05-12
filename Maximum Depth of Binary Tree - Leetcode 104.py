@@ -7,3 +7,6 @@ class Solution:
         right = self.maxDepth(root.right)
 
         return 1 + max(left, right)
+
+# Time Complexity: O(n)
+# Space Complexity: O(h) { here "h" is the height of the binary tree }
