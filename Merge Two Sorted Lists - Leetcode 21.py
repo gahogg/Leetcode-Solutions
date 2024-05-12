@@ -16,3 +16,6 @@ class Solution:
         cur.next = list1 if list1 else list2
 
         return d.next
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
