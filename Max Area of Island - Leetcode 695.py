@@ -17,3 +17,6 @@ class Solution:
                     max_area = max(max_area, dfs(i, j))
 
         return max_area
+
+# Time Complexity: O(m*n)
+# Space Complexity: O(m*n)
