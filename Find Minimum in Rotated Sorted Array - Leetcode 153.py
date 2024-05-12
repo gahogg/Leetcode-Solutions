@@ -13,3 +13,6 @@ class Solution:
                 r = m
 
         return nums[l]
+
+# Time Complexity: O(log(n))
+# Space Complexity: O(1)
