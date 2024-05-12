@@ -18,3 +18,6 @@ class Solution:
             return m + 1
         else:
             return m
+
+# Time Complexity: O(log n)
+# Space Complexity: O(1)
