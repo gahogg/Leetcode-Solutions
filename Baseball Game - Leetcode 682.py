@@ -11,4 +11,8 @@ class Solution:
                 stk.pop()
             else:
                 stk.append(int(op))
+
         return sum(stk)
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
