@@ -12,3 +12,6 @@ class Solution:
                 return True
 
         return False
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
