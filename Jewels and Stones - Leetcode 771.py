@@ -7,3 +7,6 @@ class Solution:
             if stone in s:
                 count += 1
         return count
+
+# Time Complexity: O(n + m)
+# Space Complexity: O(n)
