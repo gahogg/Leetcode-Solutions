@@ -14,3 +14,6 @@ class Solution:
             if node.left: stk.append((node.left, largest))
 
         return good_nodes
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
