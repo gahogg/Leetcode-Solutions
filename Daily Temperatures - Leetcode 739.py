@@ -12,3 +12,6 @@ class Solution:
 
             stk.append((t, i))
         return answer
+        
+# Time Complexity: O(n)
+# Space Complexity: O(n)
