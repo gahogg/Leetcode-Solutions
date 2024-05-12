@@ -12,3 +12,6 @@ class Solution:
                 heapq.heappushpop(heap, (-d, x, y))
 
         return [(x, y) for d, x, y in heap]
+
+# Time Complexity: O(n log k)
+# Space Complexity: O(k)
