@@ -18,3 +18,6 @@ class Solution:
 
         search(root)
         return lca[0]
+
+# Time Complexity: O(h) { here "h" is the height of the binary search tree }
+# Space Complexity: O(h) { here "h" is the height of the binary search tree }
