@@ -16,3 +16,6 @@ class Solution:
             max_avg = max(max_avg, avg)
 
         return max_avg
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
