@@ -20,3 +20,6 @@ class Solution:
             ans.append(level)
 
         return ans
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
