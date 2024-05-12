@@ -9,3 +9,6 @@ class Solution:
 
             if y in h and h[y] != i:
                 return [i, h[y]]
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
