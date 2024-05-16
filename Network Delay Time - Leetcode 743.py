@@ -1,6 +1,7 @@
 import heapq
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        # Djikstra's Algorithm
         graph = defaultdict(list)
         for u, v, time in times:
             graph[u].append((v, time))
