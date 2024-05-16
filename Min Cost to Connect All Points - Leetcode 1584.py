@@ -1,33 +1,29 @@
 import heapq
 class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
-        # Prim's Algorithm
+        # Prim's algorithm to create a MST (Minimum Spanning Tree)
         n = len(points)
-        g = defaultdict(list)
-        for i in range(n):
-            xi, yi = points[i]
-            for j in range(i+1, n):
-                xj, yj = points[j]
-                dist = abs(xi-xj) + abs(yi-yj)
-                g[i].append((j, dist))
-                g[j].append((i, dist))
-        
         total_cost = 0
+        heap = [(0, 0)]
         seen = set()
-        min_heap = [(0, 0)] # (dist, node)
 
         while len(seen) < n:
-            dist, node = heapq.heappop(min_heap)
-            if node in seen:
+            dist, i = heapq.heappop(heap)
+            if i in seen:
                 continue
+            
+            seen.add(i)
             total_cost += dist
-            seen.add(node)
+            xi, yi = points[i]
 
-            for nei_node, nei_dist in g[node]:
-                if nei_node not in seen:
-                    heapq.heappush(min_heap, (nei_dist, nei_node))
+            for j in range(n):
+                if j not in seen:
+                    xj, yj = points[j]
+                    nei_dist = abs(xi-xj) + abs(yi-yj)
+                    heapq.heappush(heap, (nei_dist, j))
         
         return total_cost
-        # Time: O(n^2 log(n))
+                    
+        # Time: O(n^2 log(n)) where n is the number of points
         #    or O(E log(E)) where E is the number of edges, which is n^2
         # Space: O(n^2) or O(E)
