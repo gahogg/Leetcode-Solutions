@@ -20,3 +20,5 @@ class Solution:
                    same(root1.right, root2.left)
 
         return same(root, root)
+        # Time: O(n)
+        # Space: O(height) or O(n)
