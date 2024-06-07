@@ -5,31 +5,27 @@
 #         self.left = left
 #         self.right = right
 from collections import deque
-
 class Solution:
     def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
         avgs = []
-        queue = []
-        queue.append(root)
+        q = deque()
+        q.append(root)
 
-        while queue:
+        while q:
             avg = 0
-            n = len(queue)
+            n = len(q)
             for _ in range(n):
-                node = queue.pop(0)
-                if node.left:
-                    queue.append(node.left)
-                
-                if node.right:
-                    queue.append(node.right)
-                
+                node = q.popleft()
                 avg += node.val
+
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
 
             avg /= n
             avgs.append(avg)
-    
+        
         return avgs
         # Time: O(n)
         # Space: O(n)
-
-
