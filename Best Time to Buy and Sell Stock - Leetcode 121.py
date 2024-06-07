@@ -1,6 +1,6 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        max_profit = float('-inf')
+        max_profit = 0
         for i in range(len(prices)):
             for j in range(i+1, len(prices)):
                 profit = prices[j] - prices[i]
@@ -8,9 +8,10 @@ class Solution:
                 if profit > 0:
                     max_profit = max(max_profit, profit)
         
-        return max_profit if max_profit > float('-inf') else 0
+        return max_profit
         # Time: O(N^2) (Brute Force)
         # Space: O(1)
+        # This was modified from the video explanation to let max_profit = 0, this is better
 
 
 class Solution:
