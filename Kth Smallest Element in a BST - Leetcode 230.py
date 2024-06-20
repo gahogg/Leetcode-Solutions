@@ -19,10 +19,9 @@ class Solution:
                 ans[0] = node.val
             
             count[0] = count[0] - 1
-
             if count[0] > 0:
                 dfs(node.right)
-            
+        
         dfs(root)
         return ans[0]
         # Time: O(n)
