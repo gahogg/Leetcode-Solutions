@@ -20,7 +20,7 @@ class Solution:
             
             count[0] = count[0] - 1
 
-            if count[0] > 0:
+            if count[0] > 1:
                 dfs(node.right)
             
         dfs(root)
