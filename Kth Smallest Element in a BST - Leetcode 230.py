@@ -14,12 +14,13 @@ class Solution:
                 return
             
             dfs(node.left)
+
+            if count[0] == 1:
+                ans[0] = node.val
+            
             count[0] = count[0] - 1
 
-            if count[0] == 0:
-                ans[0] = node.val
-
-            if k > 0:
+            if count[0] > 0:
                 dfs(node.right)
             
         dfs(root)
