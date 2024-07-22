@@ -3,7 +3,7 @@ class Solution:
         s = set(nums)
         longest = 0
 
-        for num in nums:
+        for num in s: # Fixed to loop through the set, this is important
             if num - 1 not in s:
                 next_num = num + 1
                 length = 1
