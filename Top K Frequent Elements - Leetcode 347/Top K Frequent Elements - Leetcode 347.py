@@ -15,6 +15,8 @@ class Solution:
         return [h[1] for h in heap]
     # Time: O(n log k), Space: O(k)
 
+
+# Buckets
 from collections import Counter
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
