@@ -8,9 +8,10 @@ public class Solution {
             return fib(n - 1) + fib(n - 2);
         }
     }
-
+    // Naive Recursive Solution
     // Time: O(2^n)
     // Space: O(n)
+    
 }
 
 
@@ -36,6 +37,7 @@ public class Solution {
         return result;
     }
 
+    // Top Down DP With Memoization
     // Time: O(n)
     // Space: O(n)
 }
@@ -59,7 +61,7 @@ public class Solution {
 
         return dp[n];
     }
-
+    // Bottom Up DP With Tabulation
     // Time: O(n)
     // Space: O(n)
 }
@@ -84,7 +86,7 @@ public class Solution {
 
         return cur;
     }
-
+    // Bottom Up DP With Constant Space
     // Time: O(n)
     // Space: O(1)
 }
