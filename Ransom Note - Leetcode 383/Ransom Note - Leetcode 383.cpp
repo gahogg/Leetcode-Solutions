@@ -1,10 +1,11 @@
 #include <unordered_map>
 #include <string>
+using namespace std;
 
 class Solution {
 public:
-    bool canConstruct(std::string ransomNote, std::string magazine) {
-        std::unordered_map<char, int> hashmap; 
+    bool canConstruct(string ransomNote, string magazine) {
+        unordered_map<char, int> hashmap;
 
         for (char ch : magazine) {
             hashmap[ch]++;
