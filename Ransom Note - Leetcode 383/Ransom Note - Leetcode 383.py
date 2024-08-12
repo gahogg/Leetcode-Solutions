@@ -1,22 +1,13 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        counter = {}
+        hashmap = Counter(magazine) # TC for Counter is O(n)
 
-        for c in magazine:
-            if c in counter:
-                counter[c] += 1
+        for ch in ransomNote:
+            if hashmap[ch] > 0:
+                hashmap[ch]-=1
             else:
-                counter[c] = 1
-
-        for c in ransomNote:
-            if c not in counter:
                 return False
-            elif counter[c] == 1:
-                del counter[c]
-            else:
-                counter[c] -= 1
-
         return True
 
-# Time Complexity: O(m + n)
-# Space Complexity: O(1)
+# Time Complexity: O(m + n)  -> m = len(ransomNote), n = len(magazine)
+# Space Complexity: O(n)     -> we're using a hashmap 

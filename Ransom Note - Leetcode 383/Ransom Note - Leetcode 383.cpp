@@ -1,23 +1,26 @@
 #include <unordered_map>
 #include <string>
-using namespace std;
 
 class Solution {
 public:
-    bool canConstruct(string ransomNote, string magazine) {
-        unordered_map<char, int> counter;
-        
-        for (char c : magazine) {
-            counter[c]++;
+    bool canConstruct(std::string ransomNote, std::string magazine) {
+        std::unordered_map<char, int> hashmap; 
+
+        for (char ch : magazine) {
+            hashmap[ch]++;
         }
-        
-        for (char c : ransomNote) {
-            if (counter[c] == 0) {
+
+        for (char ch : ransomNote) {
+            if (hashmap[ch] > 0) {
+                hashmap[ch]--;
+            } else {
                 return false;
             }
-            counter[c]--;
         }
-        
+
         return true;
     }
 };
+
+// Time Complexity: O(m + n)  -> m = length of ransomNote, n = length of magazine
+// Space Complexity: O(n)     -> we're using an unordered_map

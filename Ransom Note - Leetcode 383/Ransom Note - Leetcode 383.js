@@ -1,16 +1,20 @@
-function canConstruct(ransomNote, magazine) {
-    const counter = {};
-    
-    for (const c of magazine) {
-        counter[c] = (counter[c] || 0) + 1;
+var canConstruct = function(ransomNote, magazine) {
+    let hashmap = {}; 
+
+    for (let ch of magazine) {
+        hashmap[ch] = (hashmap[ch] || 0) + 1;
     }
-    
-    for (const c of ransomNote) {
-        if (!counter[c] || counter[c] === 0) {
+
+    for (let ch of ransomNote) {
+        if (hashmap[ch] > 0) {
+            hashmap[ch]--;
+        } else {
             return false;
         }
-        counter[c]--;
     }
-    
+
     return true;
-}
+};
+
+// Time Complexity: O(m + n)  -> m = length of ransomNote, n = length of magazine
+// Space Complexity: O(n)     -> we're using a hashmap
