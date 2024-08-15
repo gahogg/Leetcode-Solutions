@@ -5,61 +5,36 @@ using namespace std;
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
-        vector<int> ans;
-        if (matrix.empty()) return ans;
+        vector<int> res;
+        if(matrix.size()==0 || matrix[0].size()==0) return res;
 
         int m = matrix.size();
         int n = matrix[0].size();
-        int UP = 0, RIGHT = 1, DOWN = 2, LEFT = 3;
-        int direction = RIGHT;
-
-        int UP_WALL = 0;
-        int RIGHT_WALL = n;
-        int DOWN_WALL = m;
-        int LEFT_WALL = -1;
-
-        int i = 0, j = 0;
-
-        while (ans.size() != m * n) {
-            if (direction == RIGHT) {
-                while (j < RIGHT_WALL) {
-                    ans.push_back(matrix[i][j]);
-                    j++;
+        int top = 0, bottom = m-1;
+        int left = 0, right = n-1;
+        
+        while(top<=bottom && left<=right){
+            for(int j = left; j<=right;j++){
+                res.push_back(matrix[top][j]);
+            }
+            top++;
+            for(int i = top; i<=bottom; i++){
+                res.push_back(matrix[i][right]);
+            }
+            right--;
+            if(top<=bottom){
+                for(int j = right; j >= left; j--){
+                    res.push_back(matrix[bottom][j]);
                 }
-                i++;
-                j--;
-                RIGHT_WALL--;
-                direction = DOWN;
-            } else if (direction == DOWN) {
-                while (i < DOWN_WALL) {
-                    ans.push_back(matrix[i][j]);
-                    i++;
+                bottom--;
+            }
+            if(left <= right){
+                for(int i = bottom; i>=top; i--){
+                    res.push_back(matrix[i][left]);
                 }
-                i--;
-                j--;
-                DOWN_WALL--;
-                direction = LEFT;
-            } else if (direction == LEFT) {
-                while (j > LEFT_WALL) {
-                    ans.push_back(matrix[i][j]);
-                    j--;
-                }
-                i--;
-                j++;
-                LEFT_WALL++;
-                direction = UP;
-            } else {
-                while (i > UP_WALL) {
-                    ans.push_back(matrix[i][j]);
-                    i--;
-                }
-                i++;
-                j++;
-                UP_WALL++;
-                direction = RIGHT;
+                left++;
             }
         }
-
-        return ans;
+        return res;
     }
 };
