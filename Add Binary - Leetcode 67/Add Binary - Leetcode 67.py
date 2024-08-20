@@ -9,4 +9,4 @@ class Solution:
             
         return bin(a)[2:]
         # Time: O(A + B)
-        # Space: O(max(A, B))
+        # Space: O(1)
