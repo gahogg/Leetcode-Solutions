@@ -1,46 +1,41 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
-        m, n = len(matrix), len(matrix[0])
-        ans = []
-        i, j = 0, 0
-        UP, RIGHT, DOWN, LEFT = 0, 1, 2, 3
-        direction = RIGHT
+        res = []
+        top,bottom = 0, len(matrix)-1
+        left,right = 0, len(matrix[0])-1
 
-        UP_WALL = 0
-        RIGHT_WALL = n
-        DOWN_WALL = m
-        LEFT_WALL = -1
+        while top<=bottom and left<=right:
 
-        while len(ans) != m*n:
-            if direction == RIGHT:
-                while j < RIGHT_WALL:
-                    ans.append(matrix[i][j])
-                    j += 1
-                i, j = i+1, j-1
-                RIGHT_WALL -= 1
-                direction = DOWN
-            elif direction == DOWN:
-                while i < DOWN_WALL:
-                    ans.append(matrix[i][j])
-                    i += 1
-                i, j = i-1, j-1
-                DOWN_WALL -= 1
-                direction = LEFT
-            elif direction == LEFT:
-                while j > LEFT_WALL:
-                    ans.append(matrix[i][j])
-                    j -= 1
-                i, j = i-1, j+1
-                LEFT_WALL += 1
-                direction = UP
-            else:
-                while i > UP_WALL:
-                    ans.append(matrix[i][j])
-                    i -= 1
-                i, j = i+1, j+1
-                UP_WALL += 1
-                direction = RIGHT
+            # Move left to right
+            for i in range(left,right+1):
+                res.append(matrix[top][i])
+            
+            top+=1
+
+            # Move top to bottom
+            for i in range(top,bottom+1):
+                res.append(matrix[i][right])
+            
+            right-=1
+
+            # Check If we can parse the row 
+            if top<=bottom:
+                # Move right to left
+                for i in range(right,left-1,-1):
+                    res.append(matrix[bottom][i])
+                
+                bottom-=1
+            
+            # Check If we can parse the col
+            if left<=right:
+                # Move bottom to top
+                for i in range(bottom,top-1,-1):
+                    res.append(matrix[i][left])
+                
+                left+=1
         
-        return ans 
-        # Time: O(m*n) 
-        # Space: O(1)
+        return res
+
+
+# Time Complexity: 𝑂(𝑚×𝑛)
+# Space Complexity: 𝑂(𝑚×𝑛)
