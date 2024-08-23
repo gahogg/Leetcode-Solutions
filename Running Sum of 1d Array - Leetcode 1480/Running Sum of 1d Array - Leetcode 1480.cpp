@@ -2,14 +2,15 @@ class Solution {
 public:
     vector<int> runningSum(vector<int>& nums) {
         int s = 0;
-        vector<int> running_sum(nums.size());
+        int n = nums.size();
+        vector<int> prefix_sum(n);
         
-        for (int i = 0; i < nums.size(); i++) {
+        for (int i = 0; i < n; i++) {
             s += nums[i];
-            running_sum[i] = s;
+            prefix_sum[i] = s;
         }
         
-        return running_sum;
+        return prefix_sum;
     }
     // Time: O(n)
     // Space: O(n)

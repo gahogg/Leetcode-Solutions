@@ -1,13 +1,14 @@
 var runningSum = function(nums) {
     var s = 0;
-    var running_sum = [];
+    var n = nums.length;
+    var prefix_sum = new Array(n).fill(0);
     
-    for (var i = 0; i < nums.length; i++) {
+    for (var i = 0; i < n; i++) {
         s += nums[i];
-        running_sum.push(s);
+        prefix_sum[i] = s;
     }
     
-    return running_sum;
+    return prefix_sum;
     // Time: O(n)
     // Space: O(n)
 };

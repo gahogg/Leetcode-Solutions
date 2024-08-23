@@ -1,12 +1,13 @@
 class Solution:
     def runningSum(self, nums):
         s = 0
-        running_sum = []
+        n = len(nums)
+        prefix_sum = [0] * n
         
-        for num in nums:
-            s += num
-            running_sum.append(s)
+        for i in range(n):
+            s += nums[i]
+            prefix_sum[i] = s
         
-        return running_sum
+        return prefix_sum
         # Time: O(n)
         # Space: O(n)

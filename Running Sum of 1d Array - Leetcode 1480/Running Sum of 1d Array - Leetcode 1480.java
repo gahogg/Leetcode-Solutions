@@ -1,14 +1,15 @@
 class Solution {
     public int[] runningSum(int[] nums) {
         int s = 0;
-        int[] running_sum = new int[nums.length];
+        int n = nums.length;
+        int[] prefix_sum = new int[n];
         
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < n; i++) {
             s += nums[i];
-            running_sum[i] = s;
+            prefix_sum[i] = s;
         }
         
-        return running_sum;
+        return prefix_sum;
     }
     // Time: O(n)
     // Space: O(n)
