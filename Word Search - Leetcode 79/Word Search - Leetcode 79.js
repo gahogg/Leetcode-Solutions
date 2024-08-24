@@ -4,7 +4,7 @@ var exist = function(board, word) {
     const W = word.length;
 
     if (m === 1 && n === 1) {
-        return board[0][0] === word[0];
+        return board[0][0] === word;
     }
 
     const backtrack = function(i, j, index) {
