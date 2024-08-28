@@ -1,20 +1,24 @@
 import java.util.HashMap;
 
-public class Solution {
+class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
-        HashMap<Character, Integer> counter = new HashMap<>();
+        HashMap<Character, Integer> hashmap = new HashMap<>(); 
         
-        for (char c : magazine.toCharArray()) {
-            counter.put(c, counter.getOrDefault(c, 0) + 1);
+        for (char ch : magazine.toCharArray()) {
+            hashmap.put(ch, hashmap.getOrDefault(ch, 0) + 1);
         }
-        
-        for (char c : ransomNote.toCharArray()) {
-            if (!counter.containsKey(c) || counter.get(c) == 0) {
+
+        for (char ch : ransomNote.toCharArray()) {
+            if (hashmap.getOrDefault(ch, 0) > 0) {
+                hashmap.put(ch, hashmap.get(ch) - 1);
+            } else {
                 return false;
             }
-            counter.put(c, counter.get(c) - 1);
         }
         
         return true;
     }
 }
+
+// Time Complexity: O(m + n)  -> m = len(ransomNote), n = len(magazine)
+// Space Complexity: O(n)     -> we're using a hashmap
