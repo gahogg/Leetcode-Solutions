@@ -38,3 +38,33 @@ class Solution:
 
 # Time Complexity: O(n)
 # Space Complexity: O(n)
+
+
+# Optimal Solution for Bootcamp
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        answer = [0] * n
+
+        L = 1
+        left_product = [0] * n
+
+        for i in range(n):
+            left_product[i] = L
+            L *= nums[i]
+
+
+        R = 1
+        right_product = [0] * n
+
+        for i in range(n-1, -1, -1):
+            right_product[i] = R
+            R *= nums[i]
+        
+
+        for i in range(n):
+            answer[i] = left_product[i] * right_product[i]
+        
+        return answer   
+# Time Complexity: O(n)
+# Space Complexity: O(n)
