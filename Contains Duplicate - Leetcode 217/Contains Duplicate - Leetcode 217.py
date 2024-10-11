@@ -4,10 +4,8 @@ class Solution:
         n = len(nums)
 
         for i in range(n):
-            for j in range(n):
-                if i == j:
-                    continue
-                elif nums[i] == nums[j]:
+            for j in range(i+1, n):
+                if nums[i] == nums[j]:
                     return True
         
         return False
