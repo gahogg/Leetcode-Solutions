@@ -5,11 +5,11 @@ class Solution:
         ans = [0] * n
 
         for i in range(n):
-            multiplier = 1
+            prod = 1
             for j in range(n):
                 if i != j:
-                    multiplier *= nums[j]
-            ans[i] = multiplier
+                    prod *= nums[j]
+            ans[i] = prod
         
         return ans
         # Time: O(n^2)
