@@ -7,9 +7,7 @@ class Solution:
         for i in range(n):
             multiplier = 1
             for j in range(n):
-                if i == j:
-                    continue
-                else:
+                if i != j:
                     multiplier *= nums[j]
             ans[i] = multiplier
         
