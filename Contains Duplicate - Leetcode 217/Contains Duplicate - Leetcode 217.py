@@ -4,10 +4,9 @@ class Solution:
         n = len(nums)
 
         for i in range(n):
-            for j in range(i+1, n):
-                if nums[i] == nums[j]:
+            for j in range(n):
+                if nums[i] == nums[j] and i != j:
                     return True
-        
         return False
         # Time Complexity: O(n^2)
         # Space Complexity: O(1)
