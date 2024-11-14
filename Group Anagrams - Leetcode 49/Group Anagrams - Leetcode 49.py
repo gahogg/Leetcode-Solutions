@@ -1,3 +1,17 @@
+# Brute Force Solution
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        ans = defaultdict(list)
+        for s in strs:
+            key = ''.join(sorted(s))
+            ans[key].append(s)
+
+        return list(ans.values())
+# Time: O(n * (m log m))
+# Space: O(n * m)
+# n is the number of strings, m is the length of largest string
+
+# Optimal Solution
 from collections import defaultdict
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
