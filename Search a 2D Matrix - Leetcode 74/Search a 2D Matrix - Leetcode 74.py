@@ -20,9 +20,9 @@ class Solution:
 
         while l <= r:
             mid = (l + r) // 2
-            i = mid // n
-            j = mid % n
-            mid_num = matrix[i][j]
+            mid_i = mid // n
+            mid_j = mid % n
+            mid_num = matrix[mid_i][mid_j]
 
             if target == mid_num:
                 return True
