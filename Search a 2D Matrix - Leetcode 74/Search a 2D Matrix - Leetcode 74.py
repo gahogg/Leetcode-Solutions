@@ -19,17 +19,17 @@ class Solution:
         r = t - 1
 
         while l <= r:
-            m = (l + r) // 2
-            i = m // n
-            j = m % n
+            mid = (l + r) // 2
+            i = mid // n
+            j = mid % n
             mid_num = matrix[i][j]
 
             if target == mid_num:
                 return True
             elif target < mid_num:
-                r = m - 1
+                r = mid - 1
             else:
-                l = m + 1
+                l = mid + 1
 
         return False
 
