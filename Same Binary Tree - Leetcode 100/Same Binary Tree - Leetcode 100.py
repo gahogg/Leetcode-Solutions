@@ -21,5 +21,6 @@ class Solution:
         return self.isSameTree(p.left, q.left) and \
                self.isSameTree(p.right, q.right)
 
-# Time Complexity: O(n)
-# Space Complexity: O(h) { here "h" is the height of the tree }
+# Time Complexity: O(n + m)
+# Space Complexity: O(n + m)
+# m is number of nodes in p, n is number of nodes in Q.
