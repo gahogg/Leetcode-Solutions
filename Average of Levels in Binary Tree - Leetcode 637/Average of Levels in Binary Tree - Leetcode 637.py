@@ -12,19 +12,18 @@ class Solution:
         q.append(root)
 
         while q:
-            avg = 0
+            summ = 0
             n = len(q)
             for _ in range(n):
                 node = q.popleft()
-                avg += node.val
+                summ += node.val
 
                 if node.left:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
 
-            avg /= n
-            avgs.append(avg)
+            avgs.append(summ / n)
         
         return avgs
         # Time: O(n)
