@@ -1,3 +1,13 @@
+# Brute Force Solution
+import heapq
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        nums.sort()
+        return nums[-k]
+        
+# Time: O(n log n)
+# Space: O(1)
+
 import heapq
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
@@ -10,7 +20,7 @@ class Solution:
             heapq.heappop(nums)
 
         return -heapq.heappop(nums)
-	      # Max Heap of size n
+	# Max Heap of size n
         # Time: O(n + k log n)
         # Space: O(1)    
 
