@@ -1,11 +1,11 @@
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
-        res, sol = [], []
+        ans, sol = [], []
 
         def backtrack():
             if len(sol) == n:
-                res.append(sol[:])
+                ans.append(sol[:])
                 return
 
             for x in nums:
@@ -15,7 +15,7 @@ class Solution:
                     sol.pop()
 
         backtrack()
-        return res
+        return ans
 
 # Time Complexity: O(n!)
 # Space Complexity: O(n)
