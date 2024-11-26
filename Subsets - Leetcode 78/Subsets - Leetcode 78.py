@@ -1,11 +1,11 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
-        res, sol = [], []
+        ans, sol = [], []
 
         def backtrack(i):
             if i == n:
-                res.append(sol[:])
+                ans.append(sol[:])
                 return
 
             # Don't pick nums[i]
@@ -17,7 +17,7 @@ class Solution:
             sol.pop()
 
         backtrack(0)
-        return res
+        return ans
 
 # Time Complexity: O(2^n)
 # Space Complexity: O(n)
