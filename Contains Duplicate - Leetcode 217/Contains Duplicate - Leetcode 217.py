@@ -27,12 +27,12 @@ class Solution:
 # Optimal Solution
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
-        h = set()
+        s = set()
         for num in nums:
-            if num in h:
+            if num in s:
                 return True
             else:
-                h.add(num)
+                s.add(num)
         return False
 
 # Time Complexity: O(n)
