@@ -44,10 +44,7 @@ class Solution:
         for price in prices:
             profit = price - min_price
             
-            if price < min_price:
-                min_price = price
-        
-            if profit > max_profit:
-                max_profit = profit
+            min_price = min(price, min_price)
+            max_profit = max(profit, max_profit)
                 
         return max_profit
