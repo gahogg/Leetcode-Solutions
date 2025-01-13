@@ -41,7 +41,7 @@ class Solution:
         h = {}
         n = len(nums)
         for i, x in enumerate(nums):
-            y = target - nums[i]
+            y = target - x
             if y in h:
                 return [i, h[y]]
             else:
