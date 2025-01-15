@@ -1,3 +1,21 @@
+# Brute Force Solution
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        n = len(s)
+        T = []
+        for i in range(n-1, -1, -1):
+            T.append(s[i])
+        
+        for i in range(n):
+            s[i] = T[i]
+        
+        # Time: O(n)
+        # Space: O(n)
+
+# Two Pointers (Optimal) Solution
 class Solution:
     def reverseString(self, s: List[str]) -> None:
         """
