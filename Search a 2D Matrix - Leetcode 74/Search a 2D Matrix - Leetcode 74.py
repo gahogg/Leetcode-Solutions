@@ -9,6 +9,19 @@ class Solution:
 # Time: O(m * n)
 # Space: O(1)
 
+# Brute Force Solution With (i, j) indices
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        m, n = len(matrix), len(matrix[0])
+        for i in range(m):
+            for j in range(n):
+                if target == matrix[i][j]:
+                    return True
+        
+        return False
+# Time: O(m * n)
+# Space: O(1)
+
 # Optimal Solution
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
