@@ -9,5 +9,6 @@ class Solution:
 
         return s_dict == t_dict
 
-# Time complexity: O(S + T)
-# Space complexity: O(S + T)
+# Let n be the length of the longest word
+# Time complexity: O(n)
+# Space complexity: O(n)
