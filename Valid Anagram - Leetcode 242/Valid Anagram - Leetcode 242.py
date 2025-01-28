@@ -9,5 +9,5 @@ class Solution:
 
         return s_dict == t_dict
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(S + T)
+# Space complexity: O(S + T)
