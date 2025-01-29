@@ -1,3 +1,17 @@
+# Brute Force
+def length_of_longest_substring(s: str) -> int:
+    max_length = 0
+
+    for i in range(len(s)):
+        for j in range(i, len(s)):
+            if s[j] in s[i:j]:  # Check if the character already appeared in the substring
+                break
+            max_length = max(max_length, j - i + 1)
+
+    return max_length
+    # Time: O(n^3)
+    # Space: O(n)
+
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         l = 0
