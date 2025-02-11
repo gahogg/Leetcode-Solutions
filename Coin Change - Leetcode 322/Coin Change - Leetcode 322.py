@@ -1,5 +1,24 @@
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
+        # Brute force with simple recursion
+        # Time: O(Coins ^ Amount)
+        # Space: O(Amount)
+        if amount == 0:
+            return 0
+        elif amount < 0:
+            return -1
+
+        min_cnt = -1
+        for coin in coins:
+            cnt = self.coinChange(coins, amount - coin)
+            if cnt >= 0:
+                min_cnt = cnt + 1 if min_cnt < 0 else min(min_cnt, cnt + 1)
+        return min_cnt
+
+
+
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
         # Top Down DP (Memoization)
         # Time: O(Coins * Amount)
         # Space: O(Amount)
