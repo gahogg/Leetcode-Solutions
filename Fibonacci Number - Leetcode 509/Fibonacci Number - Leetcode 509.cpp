@@ -130,5 +130,5 @@ public:
 
     // Time: O(log(n))
     // Space: O(1)
-    // Fast matrix exponentation
+    // Fast matrix exponentiation
 };
