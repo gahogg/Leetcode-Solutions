@@ -84,3 +84,51 @@ public:
 
 
 
+class Solution {
+public:
+
+    vector<vector<long long>> mult(vector<vector<long long>> a, vector<vector<long long>> b){
+        int n = a.size(),m = b[0].size(),l = a[0].size();
+        vector<vector<long long>> ans(n,vector<long long>(m,0));
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                for(int k = 0; k < l; k++){
+                    long long temp = (a[i][k]*b[k][j]);
+                    ans[i][j] = (ans[i][j] + temp);
+                }
+            }
+        }
+        return ans;
+    }
+
+    vector<vector<long long>> binpow(vector<vector<long long>> v,int n){
+        long long dim = v.size(); 
+        vector<vector<long long>> ans(dim,vector<long long>(dim,0));
+        
+        for(int i = 0; i < dim; i++) ans[i][i] = 1;
+        
+        while(n){
+            if(n & 1) ans = mult(ans,v);
+            v = mult(v,v);
+            n = n >> 1;
+        }
+        
+        return ans;
+    }
+
+    int fib(int n) {
+        if(!n) return 0;
+        vector<vector<long long>> ma = {
+            {0,1},
+            {1,1}
+        };
+
+        ma = binpow(ma,n);
+
+        return ma[0][1];
+    }
+
+    // Time: O(log(n))
+    // Space: O(1)
+    // Fast matrix exponentation
+};
