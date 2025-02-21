@@ -7,7 +7,6 @@ class Solution:
         
         UNVISITED, VISITING, VISITED = 0, 1, 2
         states = [UNVISITED] * numCourses
-
         
         def dfs(i):
             if states[i] == VISITING:
