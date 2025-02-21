@@ -17,9 +17,6 @@ class Solution:
                 elif grid[i][j] == 1:
                     FreshCount += 1
 
-        # Directions for adjacent cells (right, down, left, up)
-        Directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
-
         # Perform BFS
         while Q and FreshCount > 0:
             NumRotting = len(Q)
