@@ -48,3 +48,19 @@ class Solution:
             max_profit = max(profit, max_profit)
                 
         return max_profit
+
+# Takes account of 1st day
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        min_price = prices[0] # Day1 and we can't go back in time
+        max_profit = 0
+
+        for price in prices: 
+            if price < min_price: #e.g 7 =7, 7 >1
+                min_price = price
+            else: 
+                current_profit = price - min_price # then: cp = 7 - 7:0; 7 - 1: 6
+                if current_profit > max_profit: # 6>0
+                    max_profit = current_profit
+                    
+        return max_profit # 6
