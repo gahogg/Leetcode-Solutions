@@ -4,7 +4,8 @@ class Solution:
             hours = 0
 
             for p in piles:
-                hours += ceil(p / k)
+                # hours += ceil(p / k) ## may not work as expected without explicitly importing math.ceil
+                hours += ceil(p / k - 1) // k
 
             return hours <= h
 
