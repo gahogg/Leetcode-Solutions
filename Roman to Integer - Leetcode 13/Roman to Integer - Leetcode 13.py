@@ -6,6 +6,9 @@ class Solution:
         i = 0
         
         while i < n:
+            if i > 1 and d[s[i - 2]] < d[s[i - 1]] and d[s[i]] <= d[s[i - 1]]:
+                raise ValueError(f"Invalid Roman numeric sequence {s}")
+
             if i < n - 1 and d[s[i]] < d[s[i+1]]:
                 summ += d[s[i+1]] - d[s[i]]
                 i += 2
@@ -16,3 +19,8 @@ class Solution:
         return summ
         # Time: O(n)
         # Space: O(1)
+
+# Example Test Cases
+# sol = Solution()
+# print(sol.romanToInt('IIXX')) # Raises ValueError
+# print(sol.romanToInt('MMD'))  # Output: 2500
