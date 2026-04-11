@@ -27,7 +27,6 @@ class Solution:
             a_seen.add((m - 1, j))
 
         def get_coords(que, seen):
-            coords = set()
             while que:
                 i, j = que.popleft()
                 for i_off, j_off in [(0, 1), (1, 0), (-1, 0), (0, -1)]:
