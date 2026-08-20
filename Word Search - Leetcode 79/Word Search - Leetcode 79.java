@@ -4,10 +4,6 @@ public class Solution {
         int n = board[0].length;
         int W = word.length();
 
-        if (m == 1 && n == 1) {
-            return board[0][0] == word.charAt(0);
-        }
-
         boolean[][] visited = new boolean[m][n];
 
         for (int i = 0; i < m; i++) {
