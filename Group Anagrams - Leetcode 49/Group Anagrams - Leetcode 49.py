@@ -22,8 +22,9 @@ class Solution:
                 count[ord(c) - ord("a")] += 1
             key = tuple(count)
             anagrams_dict[key].append(s)
-
-        return anagrams_dict.values()
+        # we need to convert the dict.values iterable to list, otherwise we get the following error
+        # error : "dict_values([['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]) is not valid value for the expected return type list<list<string>>"
+        return list(anagrams_dict.values())
 # n is the number of strings, m is the length of largest string
 # Time Complexity: O(n * m)
 # Space Complexity: O(n * m)
