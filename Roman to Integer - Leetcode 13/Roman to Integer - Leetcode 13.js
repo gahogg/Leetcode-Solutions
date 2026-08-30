@@ -5,6 +5,9 @@ function romanToInt(s) {
     let i = 0;
 
     while (i < n) {
+        if (i > 1 && d[s[i - 2]] < d[s[i - 1]] && d[s[i]] <= d[s[i - 1]]) {
+            throw new Error(`Invalid Roman numeric sequence ${s}`);
+        }
         if (i < n - 1 && d[s[i]] < d[s[i + 1]]) {
             summ += d[s[i + 1]] - d[s[i]];
             i += 2;
@@ -16,3 +19,7 @@ function romanToInt(s) {
 
     return summ;
 }
+
+// Example Test Cases
+// console.log(romanToInt('IIXX')); // Throws Error
+// console.log(romanToInt('MMD'));  // Output: 2500
